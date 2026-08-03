@@ -1,0 +1,17 @@
+css_decode=0
+home_decode=0
+rules_decode=1
+settings_decode=0
+e0ee9b9c1310c2a9587c7004ff9ec443aac7caefaef11ce973088127133dd6af  trauma-team-liquid-glass.css
+8fc7d04e76460c9ca8a18f30c0bd538115b25b7a25845f3bf8c03eb23a896620  assets/home-dashboard.webp
+c6d1ff8c270b472908f28cfd3ba32cd6adc3dc7c5584b22bb8b9d1a6fe4baef3  assets/rules-page.webp
+b00810d9e8cd9c9a0a4fe576e4cf75514cd3ba44c75e4286dd481588b2813c40  assets/theme-settings.webp
+trauma-team-liquid-glass.css: Unicode text, UTF-8 text, with very long lines (364)
+assets/home-dashboard.webp:   RIFF (little-endian) data, Web/P image, VP8 encoding, 1100x715, Scaling: [none]x[none], YUV color, decoders should clamp
+assets/rules-page.webp:       RIFF (little-endian) data, Web/P image, VP8 encoding, 1100x714, Scaling: [none]x[none], YUV color, decoders should clamp
+assets/theme-settings.webp:   RIFF (little-endian) data, Web/P image, VP8 encoding, 1100x718, Scaling: [none]x[none], YUV color, decoders should clamp
+ 62092 trauma-team-liquid-glass.css
+ 32128 assets/home-dashboard.webp
+ 21781 assets/rules-page.webp
+ 18156 assets/theme-settings.webp
+134157 total
