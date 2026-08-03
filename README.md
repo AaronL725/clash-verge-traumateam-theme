@@ -8,10 +8,11 @@
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-E9F7F7?style=flat-square)
 ![Theme](https://img.shields.io/badge/theme-Trauma%20Team-FF4B3E?style=flat-square)
 ![CSS](https://img.shields.io/badge/CSS-no%20remote%20assets-F4E648?style=flat-square)
+[![License](https://img.shields.io/badge/license-MIT-31E981?style=flat-square)](./LICENSE)
 
 深蓝黑医疗指挥终端、青色遥测界面、红色应急标识，以及接近 Liquid Glass 的分层毛玻璃质感。
 
-[下载主题](./trauma-team-liquid-glass.css) · [安装教程](#安装与配置) · [Clash Verge Rev Latest](https://github.com/clash-verge-rev/clash-verge-rev/releases/latest)
+[下载主题](./trauma-team-liquid-glass.css) · [安装教程](#安装与配置) · [许可证](./LICENSE) · [Clash Verge Rev Latest](https://github.com/clash-verge-rev/clash-verge-rev/releases/latest)
 
 </div>
 
@@ -200,9 +201,17 @@ macOS 用户可在系统设置中启用“减少透明度”，主题会自动�
 │   ├── home-dashboard.png
 │   ├── rules-page.png
 │   └── theme-settings.png
+├── .gitignore
+├── LICENSE
 ├── trauma-team-liquid-glass.css
 └── README.md
 ```
+
+## 许可证
+
+本项目中的 CSS 代码和项目文档依据 [MIT License](./LICENSE) 发布。
+
+Cyberpunk 2077、Trauma Team、Clash Verge Rev 等名称、商标、标志及其他第三方视觉资产不属于本项目的 MIT 授权范围，其权利归各自权利人所有。
 
 ## 免责声明
 
