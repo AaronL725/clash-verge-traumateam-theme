@@ -1,12 +1,6 @@
 name: Materialize theme assets
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".build/**"
-      - ".github/workflows/materialize-assets.yml"
   issues:
     types: [opened]
   workflow_dispatch:
@@ -20,6 +14,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build release files
         shell: bash
@@ -55,4 +51,5 @@ jobs:
           fi
 
           git commit -m "feat: publish Trauma Team Liquid Glass theme"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
