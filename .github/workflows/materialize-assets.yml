@@ -1,15 +1,14 @@
-name: Materialize theme assets
+name: Clean temporary publishing files
 
 on:
   issues:
     types: [opened]
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  materialize:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -17,38 +16,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Materialize and publish release files
+      - name: Remove temporary publishing files
         shell: bash
         run: |
-          set +e
-          mkdir -p assets
-          : > .materialize.log
-
-          base64 -d .build/css.gz.b64 | gzip -d > trauma-team-liquid-glass.css
-          echo "css_decode=$?" >> .materialize.log
-
-          cat .build/home-dashboard.* | base64 -d > assets/home-dashboard.webp
-          echo "home_decode=$?" >> .materialize.log
-
-          cat .build/rules-page.* | base64 -d > assets/rules-page.webp
-          echo "rules_decode=$?" >> .materialize.log
-
-          cat .build/theme-settings.* | base64 -d > assets/theme-settings.webp
-          echo "settings_decode=$?" >> .materialize.log
-
-          sha256sum trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
-          file trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
-          wc -c trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
+          set -euo pipefail
+          rm -rf .build
+          rm -f .materialize.log .actions-probe
+          rm -f .github/workflows/materialize-assets.yml
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add trauma-team-liquid-glass.css assets/ .materialize.log
+          git add -A
 
           if git diff --cached --quiet; then
-            echo "No generated changes." >> .materialize.log
             exit 0
           fi
 
-          git commit -m "feat: publish Trauma Team Liquid Glass theme"
+          git commit -m "chore: clean temporary publishing files"
           git pull --rebase origin main
           git push origin HEAD:main
