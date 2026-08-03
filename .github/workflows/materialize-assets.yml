@@ -1,0 +1,56 @@
+name: Materialize theme assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".build/**"
+      - ".github/workflows/materialize-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+
+          base64 -d .build/css.gz.b64 | gzip -d > trauma-team-liquid-glass.css
+          cat .build/home-dashboard.* | base64 -d > assets/home-dashboard.webp
+          cat .build/rules-page.* | base64 -d > assets/rules-page.webp
+          cat .build/theme-settings.* | base64 -d > assets/theme-settings.webp
+
+          expected_css_sha="e0ee9b9c1310c2a9587c7004ff9ec443aac7caefaef11ce973088127133dd6af"
+          actual_css_sha="$(sha256sum trauma-team-liquid-glass.css | cut -d' ' -f1)"
+          test "$actual_css_sha" = "$expected_css_sha"
+
+          file assets/*.webp
+          test -s assets/home-dashboard.webp
+          test -s assets/rules-page.webp
+          test -s assets/theme-settings.webp
+
+      - name: Commit generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add trauma-team-liquid-glass.css assets/
+
+          if git diff --cached --quiet; then
+            echo "Generated files are already current."
+            exit 0
+          fi
+
+          git commit -m "feat: publish Trauma Team Liquid Glass theme"
+          git push
