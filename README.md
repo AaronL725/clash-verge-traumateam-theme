@@ -88,14 +88,14 @@ Settings / 设置 → Theme Setting / 主题设置
 
 | Theme Setting | 中文名称 | 值 |
 |---|---|---|
-| Primary Color | 主要颜色 | `#00E5D4` |
-| Secondary Color | 次要颜色 | `#FF4B3E` |
-| Primary Text | 文本主要颜色 | `#E9F7F7` |
-| Secondary Text | 文本次要颜色 | `#8AAEB2` |
-| Info Color | 信息颜色 | `#00E5D4` |
-| Warning Color | 警告颜色 | `#F4E648` |
-| Error Color | 错误颜色 | `#FF4B3E` |
-| Success Color | 成功颜色 | `#31E981` |
+| Primary Color | 主要颜色 | <img src="./assets/colors/00e5d4.svg" width="14" height="14" alt="#00E5D4"> `#00E5D4` |
+| Secondary Color | 次要颜色 | <img src="./assets/colors/ff4b3e.svg" width="14" height="14" alt="#FF4B3E"> `#FF4B3E` |
+| Primary Text | 文本主要颜色 | <img src="./assets/colors/e9f7f7.svg" width="14" height="14" alt="#E9F7F7"> `#E9F7F7` |
+| Secondary Text | 文本次要颜色 | <img src="./assets/colors/8aaeb2.svg" width="14" height="14" alt="#8AAEB2"> `#8AAEB2` |
+| Info Color | 信息颜色 | <img src="./assets/colors/00e5d4.svg" width="14" height="14" alt="#00E5D4"> `#00E5D4` |
+| Warning Color | 警告颜色 | <img src="./assets/colors/f4e648.svg" width="14" height="14" alt="#F4E648"> `#F4E648` |
+| Error Color | 错误颜色 | <img src="./assets/colors/ff4b3e.svg" width="14" height="14" alt="#FF4B3E"> `#FF4B3E` |
+| Success Color | 成功颜色 | <img src="./assets/colors/31e981.svg" width="14" height="14" alt="#31E981"> `#31E981` |
 
 Font Family / 字体系列填写：
 
