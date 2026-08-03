@@ -155,12 +155,12 @@ Avenir Next Condensed, Avenir Next, -apple-system, BlinkMacSystemFont, SF Pro Di
 
 | 颜色 | 用途 |
 |---|---|
-| `#00E5D4` | 医疗遥测、连接状态、主要交互 |
-| `#FF4B3E` | 紧急响应、危险操作、Trauma Team 标志 |
-| `#F4E648` | 工业安全与警示信息 |
-| `#31E981` | 成功、在线与系统正常状态 |
-| `#E9F7F7` | 临床白主文字，避免纯白过度刺眼 |
-| `#8AAEB2` | 冷灰蓝辅助文字 |
+| <img src="./assets/colors/00e5d4.svg" width="14" height="14" alt="#00E5D4"> `#00E5D4` | 医疗遥测、连接状态、主要交互 |
+| <img src="./assets/colors/ff4b3e.svg" width="14" height="14" alt="#FF4B3E"> `#FF4B3E` | 紧急响应、危险操作、Trauma Team 标志 |
+| <img src="./assets/colors/f4e648.svg" width="14" height="14" alt="#F4E648"> `#F4E648` | 工业安全与警示信息 |
+| <img src="./assets/colors/31e981.svg" width="14" height="14" alt="#31E981"> `#31E981` | 成功、在线与系统正常状态 |
+| <img src="./assets/colors/e9f7f7.svg" width="14" height="14" alt="#E9F7F7"> `#E9F7F7` | 临床白主文字，避免纯白过度刺眼 |
+| <img src="./assets/colors/8aaeb2.svg" width="14" height="14" alt="#8AAEB2"> `#8AAEB2` | 冷灰蓝辅助文字 |
 
 ## 稳定性策略
 
@@ -190,6 +190,13 @@ macOS 用户可在系统设置中启用“减少透明度”，主题会自动�
 ```text
 .
 ├── assets/
+│   ├── colors/
+│   │   ├── 00e5d4.svg
+│   │   ├── 31e981.svg
+│   │   ├── 8aaeb2.svg
+│   │   ├── e9f7f7.svg
+│   │   ├── f4e648.svg
+│   │   └── ff4b3e.svg
 │   ├── home-dashboard.png
 │   ├── rules-page.png
 │   └── theme-settings.png
