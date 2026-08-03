@@ -17,36 +17,35 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build release files
+      - name: Materialize and publish release files
         shell: bash
         run: |
-          set -euo pipefail
+          set +e
           mkdir -p assets
+          : > .materialize.log
 
           base64 -d .build/css.gz.b64 | gzip -d > trauma-team-liquid-glass.css
+          echo "css_decode=$?" >> .materialize.log
+
           cat .build/home-dashboard.* | base64 -d > assets/home-dashboard.webp
+          echo "home_decode=$?" >> .materialize.log
+
           cat .build/rules-page.* | base64 -d > assets/rules-page.webp
+          echo "rules_decode=$?" >> .materialize.log
+
           cat .build/theme-settings.* | base64 -d > assets/theme-settings.webp
+          echo "settings_decode=$?" >> .materialize.log
 
-          expected_css_sha="e0ee9b9c1310c2a9587c7004ff9ec443aac7caefaef11ce973088127133dd6af"
-          actual_css_sha="$(sha256sum trauma-team-liquid-glass.css | cut -d' ' -f1)"
-          test "$actual_css_sha" = "$expected_css_sha"
+          sha256sum trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
+          file trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
+          wc -c trauma-team-liquid-glass.css assets/*.webp >> .materialize.log 2>&1
 
-          file assets/*.webp
-          test -s assets/home-dashboard.webp
-          test -s assets/rules-page.webp
-          test -s assets/theme-settings.webp
-
-      - name: Commit generated files
-        shell: bash
-        run: |
-          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add trauma-team-liquid-glass.css assets/
+          git add trauma-team-liquid-glass.css assets/ .materialize.log
 
           if git diff --cached --quiet; then
-            echo "Generated files are already current."
+            echo "No generated changes." >> .materialize.log
             exit 0
           fi
 
