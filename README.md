@@ -22,15 +22,15 @@
 
 ### 首页与系统状态
 
-![首页与系统状态](assets/home-dashboard.png)
+![首页与系统状态](assets/home-dashboard.webp)
 
 ### 规则页面
 
-![规则页面](assets/rules-page.png)
+![规则页面](assets/rules-page.webp)
 
 ### Theme Setting
 
-![Theme Setting](assets/theme-settings.png)
+![Theme Setting](assets/theme-settings.webp)
 
 ## 主题特点
 
@@ -195,9 +195,9 @@ Liquid Glass 视觉主要依赖 `backdrop-filter`。在较老的 Mac、低功耗
 │   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── assets/
-│   ├── home-dashboard.png
-│   ├── rules-page.png
-│   └── theme-settings.png
+│   ├── home-dashboard.webp
+│   ├── rules-page.webp
+│   └── theme-settings.webp
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── trauma-team-liquid-glass.css
