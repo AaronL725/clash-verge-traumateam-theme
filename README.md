@@ -221,6 +221,7 @@ Cyberpunk 2077、Trauma Team、Clash Verge Rev 等名称、商标、标志及其
 
 - [Clash Verge Rev Latest Release](https://github.com/clash-verge-rev/clash-verge-rev/releases/latest)
 - Cyberpunk 2077 与 Trauma Team 的世界观和视觉设计
+Thanks to [linux.do](https://linux.do/) — a vibrant tech community where this project is shared and discussed.
 
 ---
 
